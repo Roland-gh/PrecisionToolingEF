@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Precision Tooling EF</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PrecisionToolingEF.styles.css" asp-append-version="true" />
+    <title>Precision Tools & Manufacturing Solutions</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+
+</head>
+<body>
+    <partial name="_MainHeader" />
+
+    
+    <div class="container">
+
+        <partial name="_AdminNavigationView" />
+
+        @* <!--  ADMINISTRATION NAVIGATION -->
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="nav nav-tabs">
+
+                        <li class="nav-item">
+                            @{
+                                if (ViewData["Screen"]?.ToString() == "General")
+                                {
+                                    <a class="nav-link active" asp-area="" asp-controller="Administration" asp-action="Employees">Employees</a>
+                                }
+                                else
+                                {
+                                    <a class="nav-link" asp-area="" asp-controller="Administration" asp-action="Employees">Employees</a>
+                                }
+                            }
+
+                        </li>
+                        <li class="nav-item">
+                            @{
+                                if (ViewData["Screen"]?.ToString() == "Labor")
+                                {
+                                    <a class="nav-link active" asp-area="" asp-controller="Job" asp-action="Labor">Payroll</a>
+                                }
+                                else
+                                {
+                                    <a class="nav-link " asp-area="" asp-controller="Job" asp-action="Labor">Payroll</a>
+                                }
+                            }
+
+                        </li>
+                        <li class="nav-item">
+                            @{
+                                if (ViewData["Screen"]?.ToString() == "Material")
+                                {
+                                    <a class="nav-link active" asp-area="" asp-controller="Job" asp-action="Material">Settings</a>
+                                }
+                                else
+                                {
+                                    <a class="nav-link " asp-area="" asp-controller="Job" asp-action="Material">Settings</a>
+                                }
+                            }
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav> *@
+
+
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <partial name="_Footer" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

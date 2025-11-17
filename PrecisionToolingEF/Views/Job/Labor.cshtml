@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_JobEditLayout";
+
+    ViewData["Screen"] = "Labor";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Employee Name</th>
+            <th>Date</th>
+            <th>Cost</th>
+            <th>Hours</th>
+            <th>Overtime</th>
+            <th>Total Cost</th>
+            <th colspan="2">Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>John Doe</td>
+            <td>10/15/2025</td>
+            <td>$30.00</td>
+            <td>20.5</td>
+            <td>0</td>
+            <td>$615.00</td>
+            <td>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Job" asp-action="EditLabor">Edit</a>
+            </td>
+            <td>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Job" asp-action="Delete">Delete</a>
+
+            </td>
+        </tr>
+        <tr>
+            <td>Tony Stark</td>
+            <td>10/16/2025</td>
+            <td>$35.00</td>
+            <td>8.00</td>
+            <td>0</td>
+            <td>$280.00</td>
+            <td>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Job" asp-action="EditLabor">Edit</a>
+            </td>
+            <td>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Job" asp-action="Delete">Delete</a>
+
+            </td>
+        </tr>
+    </tbody>
+</table>

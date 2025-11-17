@@ -1,0 +1,53 @@
+﻿<!--  JOB NAVIGATION -->
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container-fluid">
+
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="nav nav-tabs">
+
+                <li class="nav-item">
+                    @{
+                        if (ViewData["Screen"]?.ToString() == "General")
+                        {
+                            <a class="nav-link active" asp-area="" asp-controller="Job" asp-action="JobGeneral">General Information</a>
+                        }
+                        else
+                        {
+                            <a class="nav-link" asp-area="" asp-controller="Job" asp-action="JobGeneral">General Information</a>
+                        }
+                    }
+
+                </li>
+                <li class="nav-item">
+                    @{
+                        if (ViewData["Screen"]?.ToString() == "Labor")
+                        {
+                            <a class="nav-link active" asp-area="" asp-controller="Job" asp-action="Labor">Labor</a>
+                        }
+                        else
+                        {
+                            <a class="nav-link " asp-area="" asp-controller="Job" asp-action="Labor">Labor</a>
+                        }
+                    }
+
+                </li>
+                <li class="nav-item">
+                    @{
+                        if (ViewData["Screen"]?.ToString() == "Material")
+                        {
+                            <a class="nav-link active" asp-area="" asp-controller="Job" asp-action="Material">Material</a>
+                        }
+                        else
+                        {
+                            <a class="nav-link " asp-area="" asp-controller="Job" asp-action="Material">Material</a>
+                        }
+                    }
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
