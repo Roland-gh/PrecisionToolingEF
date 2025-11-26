@@ -25,10 +25,10 @@ namespace PrecisionToolingEF.Models
             get; set;
         } = "";
 
-        public string Address2
+        public string? Address2
         {
             get; set;
-        } = "";
+        }
 
 
         [Required(ErrorMessage = "You cannot leave the City blank.")]
@@ -45,7 +45,7 @@ namespace PrecisionToolingEF.Models
         } = "";
 
         [Display(Name = "Zip Code")]
-        public string ZipCode { get; set; } = "";
+        public string? ZipCode { get; set; }
 
         [StringLength(350)]
         public string? Notes {get; set; }
@@ -54,16 +54,20 @@ namespace PrecisionToolingEF.Models
         [RegularExpression(@"^[2-9]\d{2}[2-9]\d{6}$", ErrorMessage = "Enter a valid 10-digit phone number.")]
         [DataType(DataType.PhoneNumber)]
         [StringLength(10)]
-        public string Phone { get; set; } = "";
+        public string? Phone { get; set; }
+
+        [StringLength(255)]
+        [DataType(DataType.EmailAddress)]
+        public string? Email { get; set; }
 
         
         [RegularExpression(@"^[2-9]\d{2}[2-9]\d{6}$", ErrorMessage = "Enter a valid 10-digit fax number.")]
         [DataType(DataType.PhoneNumber)]
         [StringLength(10)]
-        public string FaxNumber { get; set; } = "";
+        public string? FaxNumber { get; set; }
 
 
-        public string Contact { get; set; } = "";
+        public string? Contact { get; set; }
 
     }
 }

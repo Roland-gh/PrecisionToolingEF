@@ -1,0 +1,21 @@
+﻿add-migration -context ApplicationDbContext -OutputDir Data\Migrations Initial
+
+add-migration -context PrecisionToolingContext -OutputDir Data\PTMigrations Initial
+
+* Without output directory
+add-migration -context PrecisionToolingContext
+
+update-database -context PrecisionToolingContext
+
+From Microsoft:
+	Add-Migration InitialCreate
+	Add-Migration AddBlogCreatedTimestamp
+	Update-Database
+
+Code First Migrations
+	You can "roll back" to an earlier migration by calling Update-Database and 
+	specifying the target migration to go back to by name.
+		PM> Update-Database -Migration Initial
+	As it rolls back, it applies all the changes described in the DOWN of each one.
+
+

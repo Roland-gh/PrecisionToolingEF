@@ -3,11 +3,11 @@
     <div class="container-fluid">
 
         <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-pills">
 
                 <li class="nav-item">
                     @{
-                        if (ViewData["Screen"]?.ToString() == "General")
+                        if (ViewData["Screen"]?.ToString() == "Employees")
                         {
                             <a class="nav-link active" asp-area="" asp-controller="Administration" asp-action="Employees">Employees</a>
                         }
@@ -20,7 +20,7 @@
                 </li>
                 <li class="nav-item">
                     @{
-                        if (ViewData["Screen"]?.ToString() == "Labor")
+                        if (ViewData["Screen"]?.ToString() == "Payroll")
                         {
                             <a class="nav-link active" asp-area="" asp-controller="Administration" asp-action="Payroll">Payroll</a>
                         }
@@ -33,7 +33,7 @@
                 </li>
                 <li class="nav-item">
                     @{
-                        if (ViewData["Screen"]?.ToString() == "Material")
+                        if (ViewData["Screen"]?.ToString() == "Settings")
                         {
                             <a class="nav-link active" asp-area="" asp-controller="Administration" asp-action="Settings">Settings</a>
                         }

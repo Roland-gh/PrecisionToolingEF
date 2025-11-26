@@ -13,7 +13,7 @@ namespace PrecisionToolingEF.Models
 
         public Customer Customer { get; set; } = new();
 
-        public string Description { get; set; } = "";
+        public string? Description { get; set; }
 
         [Required(ErrorMessage = "Job must have a start date.")]
         [Display(Name = "Start Date")]
@@ -27,9 +27,11 @@ namespace PrecisionToolingEF.Models
 
         
         [Display(Name = "Material Cost")]
+        [DataType(DataType.Currency)]
         public decimal? MaterialCost { get; set; }
 
         [Display(Name = "Labor Cost")]
+        [DataType(DataType.Currency)]
         public decimal? LaborCost { get; set; }
     }
 }
